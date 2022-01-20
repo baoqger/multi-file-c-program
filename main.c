@@ -62,28 +62,27 @@ int main(int argc, char *argv[]) {
                 usage(basename(argv[0]), optopt); // optopt current option name
                 break;
         }
-
-        switch(codec_op) {
-            case MM_OP_ENCODE:
-                retval = mm_encode(options.in_stream, options.out_stream);
-                break;
-            case MM_OP_DECODE:
-                retval = mm_decode(options.in_stream, options.out_stream);
-                break;
-            default:
-                retval = -1;
-                errno = EINVAL;
-                fprintf(stderr, "impossible state: %s codec=%d\n", argv[0], codec_op);
-                break;
-        }
-
-        if (retval < 0) {
-            perror("codec failed");
-        }
-
-        return retval;
-
     }
+    
+    switch(codec_op) {
+    case MM_OP_ENCODE:
+        retval = mm_encode(options.in_stream, options.out_stream);
+        break;
+    case MM_OP_DECODE:
+        retval = mm_decode(options.in_stream, options.out_stream);
+        break;
+    default:
+        retval = -1;
+        errno = EINVAL;
+        fprintf(stderr, "impossible state: %s codec=%d\n", argv[0], codec_op);
+        break;
+    }
+
+    if (retval < 0) {
+        perror("codec failed");
+    }
+
+    return retval;
 
 }
 
