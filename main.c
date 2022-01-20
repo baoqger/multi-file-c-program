@@ -10,12 +10,15 @@
 #include "mmencode.h"
 #include "mmdecode.h"
 
+/* there extern variable are declared in getopt-core.h
+
 extern char *optarg;
 extern int optopt;
 extern int opterr;
-extern int opterr; // getopt-core.h
+extern int opterr; 
+*/ 
 
-#define OPTARG "i:o:hv" // need ":" or not
+#define OPTARG "i:o:h:v" // need ":" 
 
 
 #define MM_OP_INVALID 0

@@ -5,7 +5,7 @@
 
 #define MEOWMEOW_VERSION "0.1.0"
 #define CMD_MEOW "meow"
-#define CMD_UMMEOW "ummeow"
+#define CMD_UMMEOW "unmeow"
 
 typedef enum {
     QUIET = 0,
