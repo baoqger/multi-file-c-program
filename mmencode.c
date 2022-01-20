@@ -35,5 +35,6 @@ int mm_encode(FILE *src, FILE *dst)
             fputs(tbl[lo], dst);
         }
     }
+    fclose(dst); // need close or not? 
     return 0;
 }

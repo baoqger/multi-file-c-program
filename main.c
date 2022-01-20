@@ -15,7 +15,7 @@ extern int optopt;
 extern int opterr;
 extern int opterr; // getopt-core.h
 
-#define OPTARG "iohv" // need ":" or not
+#define OPTARG "i:o:hv" // need ":" or not
 
 
 #define MM_OP_INVALID 0
