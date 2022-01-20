@@ -1,0 +1,1 @@
+This project implements two commands in C, meow and unmeow, that will encode and decode a file in the MeowMeow encoding scheme. While not intended to be useful in and of itself, the program is an example of how to structure a small to medium sized C command-line program.

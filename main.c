@@ -15,7 +15,7 @@ extern int optopt;
 extern int opterr;
 extern int opterr; // getopt-core.h
 
-#define OPTARG "i:o:hV" // need ":" or not
+#define OPTARG "iohv" // need ":" or not
 
 
 #define MM_OP_INVALID 0
@@ -41,7 +41,7 @@ int main(int argc, char *argv[]) {
             case 'i':
                 /* explicitly as stdin */
                 if (!(options.in_stream = fopen(optarg, "r"))) { // optarg current option value
-                    perror("Error opening input stream");
+                    perror("Error opening input stream: ");
                     exit(-1);
                 }
                 break;
@@ -52,7 +52,7 @@ int main(int argc, char *argv[]) {
                     exit(-1);
                 }
                 break;
-            case 'V':
+            case 'v':
                 printf("%s version %s\n", basename(argv[0]), MEOWMEOW_VERSION);
                 exit(0);
                 break;
